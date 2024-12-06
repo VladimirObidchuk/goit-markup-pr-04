@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style-new.css" />
+    <title>FoodSta</title>
+  </head>
+  <body>
+    <!-- #region header -->
+    <section class="header">
+      <div class="container">
+        <nav class="header-nav">
+          <a href="./index.html" class="header-logo logo">
+            <svg class="icon-logo" width="66" height="52">
+              <use href="./image/icons.svg#icon-logo"></use>
+            </svg>
+          </a>
+          <ul class="nav-list header-list">
+            <li class="nav-item">
+              <a href="#" class="nav-link link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link link">Service</a>
+            </li>
+            <li class="nav-item">
+              <a href="#menu" class="nav-link link">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link link">Contact</a>
+            </li>
+          </ul>
+          <div class="header-block-btn">
+            <button class="order-green btn" type="button" data-modal-order-open>Order Now</button>
+          </div>
+          <button class="burger" type="button" data-modal-open>
+            <svg class="icon-burger" width="24" height="18">
+              <use href="./image/icons.svg#icon-burger"></use>
+            </svg>
+          </button>
+        </nav>
+        <div class="backdrop" data-modal>
+          <div class="modal">
+            <div class="modal-container">
+              <button class="modal-clouse" type="button" data-modal-close>
+                <svg class="icon-clouse" width="12" height="12">
+                  <use href="./image/icons.svg#icon-clouse"></use>
+                </svg>
+              </button>
+              <ul class="modal-list">
+                <li class="modal-item">
+                  <a href="#" class="model-link link">Home</a>
+                </li>
+                <li class="modal-item">
+                  <a href="#" class="model-link link">About</a>
+                </li>
+                <li class="modal-item">
+                  <a href="#" class="model-link link">Service</a>
+                </li>
+                <li class="modal-item">
+                  <a href="#" class="model-link link">Menu</a>
+                </li>
+                <li class="modal-item">
+                  <a href="#" class="model-link link">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="backdrop-order" data-modal-order>
+          <div class="orders">
+            <div class="order-container">
+              <button class="order-clouse" type="button" data-modal-order-close>
+                <svg class="icon-clouse" width="12" height="12">
+                  <use href="./image/icons.svg#icon-clouse"></use>
+                </svg>
+              </button>
+              <h2 class="order-title">Order Form</h2>
+              <form class="order-form" data-form-order novalidate>
+                <div class="form-block">
+                  <label class="label-form text" for="username">Name</label>
+                  <input
+                    id="username"
+                    class="order-input-form"
+                    type="text"
+                    name="user-name"
+                    minlength="3"
+                    maxlength="25"
+                    placeholder="Your name"
+                    data-error-name
+                  />
+                  <span class="error-message" data-error-message>
+                    <svg class="icon-form-err" width="12" height="12">
+                      <use href="./image/icons.svg#icon-warning"></use>
+                    </svg>
+                    <span class="error-text">The name must be between 3 and 25 characters</span>
+                  </span>
+                </div>
+                <div class="form-block">
+                  <label class="label-form" for="usertel"> Phone number</label>
+                  <input
+                    id="usertel"
+                    class="order-input-form"
+                    type="tel"
+                    name="user-tel"
+                    placeholder="+38(0_ _) _ _ _   _ _   _ _"
+                    data-error-tel
+                  />
+                  <span class="error-message" data-error-message>
+                    <svg class="icon-form-err" width="12" height="12">
+                      <use href="./image/icons.svg#icon-warning"></use>
+                    </svg>
+                    <span class="error-text">The name must be between 3 and 25 characters</span>
+                  </span>
+                </div>
+                <div class="form-block">
+                  <label class="label-form" for="useremail"> E-mail</label>
+                  <input
+                    id="useremail"
+                    class="order-input-form"
+                    type="email"
+                    name="user-email"
+                    placeholder="example@gmail.com"
+                    data-error-email
+                  />
+                  <span class="error-message" data-error-message>
+                    <svg class="icon-form-err" width="12" height="12">
+                      <use href="./image/icons.svg#icon-warning"></use>
+                    </svg>
+                    <span class="error-text">The name must be between 3 and 25 characters</span>
+                  </span>
+                </div>
+                <div class="tooltip" id="tooltip">All fields are required.</div>
+                <button class="order-forn-btn" type="submit" data-form-submit>Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion -->
+    <main>
+      <!-- #region hero -->
+      <div class="hero">
+        <div class="container">
+          <div class="hero-decription">
+            <h1 class="hero-title title">Enjoy Your Favorite Food From Anywhere</h1>
+            <p class="hero-text text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
+              eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum
+              nulla, ut commodo diam libero vitae erat.
+            </p>
+            <div class="hero-block-btn">
+              <button class="order-green btn" type="button" data-order-open>Order Now</button>
+            </div>
+          </div>
+          <div class="hero-swiper hiden">
+            <div class="swiper swiper-container">
+              <div class="swiper-wrapper image-slider-wrapper">
+                <div class="swiper-slide">
+                  <div class="image-slider">
+                    <img
+                      src="./image/hero/slide-foto-1.png"
+                      alt=""
+                      srcset="./image/hero/slide-foto-1.png 1x, ./image/hero/slide-foto-1@2x.png 2x"
+                      width="528"
+                      height="528"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-slider">
+                    <img
+                      src="./image/hero/slide-foto-2.png"
+                      srcset="./image/hero/slide-foto-2.png 1x, ./image/hero/slide-foto-2@2x.png 2x"
+                      alt=""
+                      width="528"
+                      height="528"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-slider">
+                    <img
+                      src="./image/hero/slide-foto-3.png"
+                      srcset="./image/hero/slide-foto-3.png 1x, ./image/hero/slide-foto-3@2x.png 2x"
+                      alt=""
+                      width="528"
+                      height="528"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev swiper-btn-prev"></div>
+              <div class="swiper-button-next swiper-btn-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- #endregion -->
+      <!-- #region offering -->
+      <section id="about" class="offering">
+        <div class="container">
+          <div class="image-container">
+            <img
+              class="offering-img-mobile"
+              src="./image/offering/apple-offering.png"
+              alt="apple"
+              srcset="
+                ./image/offering/apple-offering.png    1x,
+                ./image/offering/apple-offering@2x.png 2x
+              "
+              width="280"
+              height="309"
+            />
+            <img
+              class="offering-img-table"
+              src="./image/offering/apple-table.png"
+              alt="apple"
+              srcset="./image/offering/apple-table.png 1x, ./image/offering/apple-table@2x.png 2x"
+              width="704"
+              height="394"
+            />
+            <img
+              class="offering-img-desktop"
+              src="./image/offering/apple-desktop.png"
+              alt="apple"
+              srcset="
+                ./image/offering/apple-desktop.png    1x,
+                ./image/offering/apple-desktop@2x.png 2x
+              "
+              width="550"
+              height="607"
+            />
+          </div>
+          <div class="offering-bottom">
+            <div class="offering-description">
+              <h2 class="offering-title title">What’s Special About Our Offerings</h2>
+              <p class="offering-text text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
+                eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum
+                nulla, ut commodo diam libero vitae erat.
+              </p>
+              <ul class="offering-list">
+                <li class="oferring-item">
+                  <div class="icon-container">
+                    <svg class="icon-offering" width="28" height="28">
+                      <use href="./image/icons.svg#icon-rocket"></use>
+                    </svg>
+                  </div>
+                  <h3 class="offering-subtitle title">Fasest Delivery</h3>
+                  <p class="offering-subtext text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
+                    in eros.
+                  </p>
+                </li>
+                <li class="oferring-item">
+                  <div class="icon-container">
+                    <svg class="icon-offering" width="28" height="28">
+                      <use href="./image/icons.svg#icon-click"></use>
+                    </svg>
+                  </div>
+                  <h3 class="offering-subtitle title">Easy to aorder</h3>
+                  <p class="offering-subtext text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
+                    in eros.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="offering-btn-container">
+              <button class="offering-btn order" type="button" data-about-order-open>
+                Order Now
+              </button>
+              <a href="#" class="offering-link-btn"
+                >Read More
+                <svg class="icon-btn-link" width="6" height="10">
+                  <use href="./image/icons.svg#icon-arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- #endregion -->
+      <!-- #region favorites -->
+      <section id="menu" class="fevorites">
+        <div class="container">
+          <h2 class="favorite-title title">Some of Our Favorites</h2>
+          <p class="favorite-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <ul class="favorite-list">
+            <li class="favorite-item">
+              <img
+                src="./image/favorites/gamburger.png"
+                alt="gamburger"
+                srcset="./image/favorites/gamburger.png 1x, ./image/favorites/gamburger@2x.png 2x"
+                width="223"
+                height="223"
+              />
+            </li>
+            <li class="favorite-item">
+              <img
+                src="./image/favorites/pasta.png"
+                alt="Pasta"
+                srcset="./image/favorites/pasta.png 1x, ./image/favorites/pasta@2x.png 2x"
+                width="223"
+                height="223"
+              />
+            </li>
+            <li class="favorite-item">
+              <img
+                src="./image/favorites/pizza.png"
+                alt="Pizza"
+                srcset="./image/favorites/pizza.png 1x, ./image/favorites/pizza@2x.png 2x"
+                width="223"
+                height="223"
+              />
+            </li>
+            <li class="favorite-item">
+              <img
+                src="./image/favorites/chicken.png"
+                alt="Chicken"
+                srcset="./image/favorites/chicken.png 1x, ./image/favorites/chicken@2x.png 2x"
+                width="223"
+                height="223"
+              />
+            </li>
+            <li class="favorite-item">
+              <img
+                src="./image/favorites/salat.png"
+                alt="Salat"
+                srcset="./image/favorites/salat.png 1x, ./image/favorites/salat@2x.png 2x"
+                width="223"
+                height="223"
+              />
+            </li>
+            <li class="favorite-item">
+              <img
+                src="./image/favorites/borshch.png"
+                alt="Borshch"
+                srcset="./image/favorites/borshch.png 1x, ./image/favorites/borshch@2x.png 2x"
+                width="223"
+                height="223"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- #endregion -->
+      <!-- #region review -->
+      <section class="review">
+        <div class="container">
+          <h2 class="review-title title">What our Customers Say</h2>
+          <p class="review-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <ul class="review-list">
+            <li class="review-item">
+              <ul class="review-sublist">
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+              </ul>
+              <p class="review-text title">
+                “The Best app I have used to order food in a while, so many options to choose from
+                too, I would recommend to a freind, No questions asked”
+              </p>
+              <div class="review-block-item">
+                <img
+                  class="review-block-img"
+                  src="./image/review/man-img.png"
+                  alt="Man avatar"
+                  width="48"
+                  height="48"
+                />
+                <p class="review-subtext">Sumith Shah</p>
+                <p class="review-text text">Some Dude</p>
+              </div>
+            </li>
+            <li class="review-item">
+              <ul class="review-sublist">
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="review-subitem">
+                  <svg class="icon-sub-review" width="16" height="16">
+                    <use href="./image/icons.svg#icon-star"></use>
+                  </svg>
+                </li>
+              </ul>
+              <p class="review-text title">
+                “The ease with which I can just go in and order what i want was amazing, It has been
+                a very pleasant experience ordering from this app”
+              </p>
+              <div class="review-block-item">
+                <img
+                  class="review-block-img"
+                  src="./image/review/women-img.png"
+                  alt="Women avatar"
+                  width="48"
+                  height="48"
+                />
+                <p class="review-subtext">Sumith Shah</p>
+                <p class="review-text text">Some Dude</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- #endregion -->
+      <!-- #region subscribe -->
+      <section id="contact" class="subscribe">
+        <div class="container">
+          <div class="subscribe-block-img">
+            <img
+              class="subscribe-img img-desktop"
+              src="./image/subscribe/banan-1280.png"
+              alt="banan"
+              srcset="./image/subscribe/banan-1280.png 1x, ./image/subscribe/banan-1280@2x.png"
+              width="546"
+              height="266"
+            />
+            <img
+              class="subscribe-img img-table"
+              src="./image/subscribe/banan-768.png"
+              alt="banan"
+              srcset="./image/subscribe/banan-768.png 1x, ./image/subscribe/banan-768@2x.png"
+              width="281"
+              height="136"
+            />
+            <img
+              class="subscribe-img img-mobile"
+              src="./image/subscribe/banan-320.png"
+              alt="banan"
+              srcset="./image/subscribe/banan-320.png 1x, ./image/subscribe/banan-320@2x.png"
+              width="161"
+              height="78"
+            />
+          </div>
+          <div class="subscribe-description">
+            <h2 class="subscribe-title title">Subscribe To Get Special Offers</h2>
+            <p class="subscribe-text text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
+              eros elementum tristique.
+            </p>
+            <form class="subscribe-form" method="post">
+              <input
+                class="subscribe-form-input"
+                type="email"
+                name="user-email"
+                id="useremail"
+                placeholder="Enter your email"
+              />
+              <button type="submit" class="form-btn btn subscribe-green btn-subscribe">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- #endregion -->
+    </main>
+    <!-- #region footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <nav class="footer-nav">
+            <a href="./index.html" class="footer-logo logo">
+              <svg class="icon-logo" width="66" height="52">
+                <use href="./image/icons.svg#icon-logo"></use>
+              </svg>
+            </a>
+            <ul class="footer-list">
+              <li class="footer-item">
+                <a href="#" class="footer-link link">Home</a>
+              </li>
+              <li class="footer-item">
+                <a href="#about" class="footer-link link">About</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link link">Service</a>
+              </li>
+              <li class="footer-item">
+                <a href="#menu" class="footer-link link">Menu</a>
+              </li>
+              <li class="footer-item">
+                <a href="#contact" class="footer-link link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <form class="subscribe-form footer-form" method="post">
+            <label class="footer-form-label">
+              Subscribe
+              <input
+                class="subscribe-form-input footer-form-input"
+                type="email"
+                name="user-email"
+                id="useremail"
+                placeholder="Enter your email"
+              />
+            </label>
+            <button type="submit" class="form-btn btn subscribe-btn btn-subscribe">
+              Subscribe
+            </button>
+            <p class="footer-form-text text">
+              By subscribing you agree to with our
+              <a href="#" class="footer-form-subtext text"> Privacy Policy</a>
+            </p>
+          </form>
+        </div>
+        <div class="footer-bottom">
+          <ul class="footer-bottom-list">
+            <li class="footer-bottom-item">
+              <a href="#" class="footer-bottom-link footer-form-subtext text">Privacy Policy</a>
+            </li>
+            <li class="footer-bottom-item">
+              <a href="#" class="footer-bottom-link footer-form-subtext text">Terms of Service</a>
+            </li>
+            <li class="footer-bottom-item">
+              <a href="#" class="footer-bottom-link footer-form-subtext text">Cookies Settings</a>
+            </li>
+          </ul>
+          <p class="footer-bottom-text footer-form-subtext text">
+            2022 FoodSta. All right reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- #endregion -->
+    <!-- #region scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/modal.js"></script>
+
+    <!-- #endregion -->
+  </body>
+</html>
